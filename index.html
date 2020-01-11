@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pomodro</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        </head>
+    <body>
+        <h1>Pomodro Timer</h1>
+        <div id="container">
+
+            <span id="session">
+                <p style="font-size: 30px;">Session</p>
+                <div id="sessionTimer">
+                    <i id="session-up" class="material-icons" style="font-size: 50px;">expand_less</i>
+                    <i id="session-down"  class="material-icons" style="font-size: 50px;">expand_more</i id="break-up">
+                    <p id="session-minutes">25</p>
+                </div>
+            </span>
+
+            <span id="break">
+                <p style="font-size: 30px;">Break</p>
+                <div id="breakTimer">
+                    <i id="break-up" class="material-icons" style="font-size: 50px;">expand_less</i>
+                    <i id="break-down"  class="material-icons" style="font-size: 50px;">expand_more</i id="break-up">
+                    <p id="rest-minutes">5</p>
+                </div>
+            </span>
+
+            <div id="timer">
+                <i id="clock" class="material-icons" style="font-size: 50px;">access_time</i>
+                <p id="time"><span id="minutes">25</span>:<span id="seconds">00</span></p>
+                <i id="play" class="material-icons" style="font-size: 50px;">play_arrow</i>
+                <i id="reset" class="material-icons" style="font-size: 50px;">restore</i>
+                <i id="pause" class="material-icons" style="font-size: 50px; visibility: hidden;">pause</i>
+            </div>
+
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
