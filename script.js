@@ -47,7 +47,7 @@ play.addEventListener('click', function countDown(){
     
     pause.style.visibility = "visible";
     play.style.visibility = "hidden";
-    if(seconds == 00) seconds = 11;
+    if(seconds == 00) seconds = 59;
     interval = setInterval(function(){
         document.getElementById('minutes').innerHTML = minutes - 1;
         document.getElementById('seconds').innerHTML = twoDigits(seconds);
