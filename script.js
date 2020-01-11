@@ -18,8 +18,11 @@ sessionUp.addEventListener('click', function(){
 });
 
 sessionDown.addEventListener('click',function(){
-    document.getElementById("session-minutes").innerHTML = --sessionMinutes;
-    document.getElementById('minutes').innerHTML = --minutes;
+    if(sessionMinutes !== 1){
+        document.getElementById("session-minutes").innerHTML = --sessionMinutes;
+        document.getElementById('minutes').innerHTML = --minutes;
+    }
+    
 });
 
 /**
@@ -44,7 +47,7 @@ play.addEventListener('click', function countDown(){
     
     pause.style.visibility = "visible";
     play.style.visibility = "hidden";
-    if(seconds == 00) seconds = 59;
+    if(seconds == 00) seconds = 11;
     interval = setInterval(function(){
         document.getElementById('minutes').innerHTML = minutes - 1;
         document.getElementById('seconds').innerHTML = twoDigits(seconds);
@@ -52,6 +55,12 @@ play.addEventListener('click', function countDown(){
         if(seconds == "00") {
             minutes--;
             seconds = 60;
+        }
+        if(minutes == "00"){
+            clearInterval(interval);
+            document.getElementById('minutes').innerHTML = "00";
+            document.getElementById('seconds').innerHTML = "00";
+            
         }
     }, 1000);
 })
@@ -67,7 +76,7 @@ pause.addEventListener('click', function(){
 })
 
 let reset = document.getElementById('reset');
-reset.addEventListener('click', function(){
+reset.addEventListener('click', function reset(){
     sessionUp.style.visibility = "visible";
     breakUp.style.visibility = "visible";
     sessionDown.style.visibility = "visible";
@@ -85,7 +94,6 @@ reset.addEventListener('click', function(){
     document.getElementById('seconds').innerHTML = "00";
 })
 
-if(minutes == 00)
 
 function twoDigits(n){
     return n > 9 ? "" + n: "0" + n;
